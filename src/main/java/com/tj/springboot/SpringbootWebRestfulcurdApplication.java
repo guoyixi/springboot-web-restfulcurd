@@ -4,6 +4,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+	* this is a Project`
+	*/
 @MapperScan("com.tj.springboot.mapper")
 @SpringBootApplication
 public class SpringbootWebRestfulcurdApplication {
