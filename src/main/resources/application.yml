@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql:///employee?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 856856
+
+mybatis:
+  configuration:
+    use-generated-keys: true
+    auto-mapping-behavior: full
+  type-aliases-package: com.tj.springboot.entities
+
+
+
+
+

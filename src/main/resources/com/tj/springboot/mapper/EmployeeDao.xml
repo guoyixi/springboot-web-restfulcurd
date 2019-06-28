@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj.springboot.mapper.EmployeeDao">
+
+    <!--
+        public void save(Employee employee);
+
+        public Collection<Employee> getAll();
+
+        public Employee get(Integer id);
+
+        public void delete(Integer id);
+    -->
+
+    <insert id="save">
+        INSERT INTO employee(lastName,email,gender,d_id)
+        VALUE (#{lastName},#{email},#{gender},#{d_dId})
+    </insert>
+
+    <select id="selectEmpById" resultType="Employee">
+        SELECT * FROM employee
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="EmpDept">
+        SELECT * FROM employee e
+        INNER JOIN`department` d ON e.`d_id` = d.`id`
+    </select>
+
+    <resultMap id="EmpDept" type="Employee">
+        <id column="id" property="id"></id>
+        <association property="department" javaType="Department"></association>
+    </resultMap>
+
+</mapper>
